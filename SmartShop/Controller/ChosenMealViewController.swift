@@ -41,11 +41,13 @@ class ChosenMealViewController: UIViewController {
         
         stepper.symbolFont           = UIFont(name: "TrebuchetMS-Bold", size: 20)
         stepper.symbolFontColor      = .black
-        stepper.backgroundColor      = green
+        stepper.layer.borderColor = grey.cgColor
+        stepper.layer.borderWidth = 1
+//        stepper.backgroundColor      = .white
         stepper.thumbWidthRatio      = 0.5
         stepper.thumbText            = ""
         stepper.thumbFont            = UIFont(name: "TrebuchetMS-Bold", size: 20)
-        stepper.thumbBackgroundColor = blue
+//        stepper.thumbBackgroundColor = green
         stepper.thumbTextColor       = .black
         
         stepper.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
