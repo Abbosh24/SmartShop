@@ -67,12 +67,13 @@ class SideMenuViewController: UIViewController {
     }
     
     @objc func menuTapped() {
-        let menuVC = MenuViewController()
-        self.present(SideMenuController(contentViewController: MainNavigationController(rootViewController: MenuViewController()), menuViewController: SideMenuViewController()), animated: false, completion: nil)
+        let menuVC = SideMenuController(contentViewController: MainNavigationController(rootViewController: MenuViewController()), menuViewController: SideMenuViewController())
+        self.present(menuVC, animated: false, completion: nil)
     }
     
     @objc func reservationsTapped() {
-        self.present(SideMenuController(contentViewController: MainNavigationController(rootViewController: ReservationsViewController()), menuViewController: SideMenuViewController()), animated: false, completion: nil)
+        let reservationsVC = SideMenuController(contentViewController: MainNavigationController(rootViewController: ReservationsViewController()), menuViewController: SideMenuViewController())
+        self.present(reservationsVC, animated: false, completion: nil)
     }
     
     @objc func logOutTapped() {
@@ -81,8 +82,8 @@ class SideMenuViewController: UIViewController {
         } catch let error {
             SCLAlertView().showError("", subTitle: error.localizedDescription)
         }
-
-        self.present(UINavigationController(rootViewController: WelcomeViewController()), animated: true, completion: nil)
+        let navCrWelcome = UINavigationController(rootViewController: WelcomeViewController())
+        self.present(navCrWelcome, animated: true, completion: nil)
     }
 
     
