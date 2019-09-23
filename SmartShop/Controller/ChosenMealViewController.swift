@@ -22,10 +22,10 @@ class ChosenMealViewController: UIViewController {
     
     lazy var descriptionOfMealLabel: UILabel = {
         let descriptionOfMealLabel = UILabel()
-        descriptionOfMealLabel.text = "Description of meal"
+        descriptionOfMealLabel.text = selectedMeal?.details
         descriptionOfMealLabel.textColor = grey
         descriptionOfMealLabel.font = avenirMedium18
-        descriptionOfMealLabel.numberOfLines = 3
+        descriptionOfMealLabel.numberOfLines = 0
         return descriptionOfMealLabel
     }()
     
@@ -43,11 +43,11 @@ class ChosenMealViewController: UIViewController {
         stepper.symbolFontColor      = .black
         stepper.layer.borderColor = grey.cgColor
         stepper.layer.borderWidth = 1
-//        stepper.backgroundColor      = .white
+        stepper.backgroundColor      = .white
         stepper.thumbWidthRatio      = 0.5
         stepper.thumbText            = "0"
         stepper.thumbFont            = UIFont(name: "TrebuchetMS-Bold", size: 20)
-//        stepper.thumbBackgroundColor = green
+        stepper.thumbBackgroundColor = .white
         stepper.thumbTextColor       = .black
         
         stepper.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
@@ -56,7 +56,7 @@ class ChosenMealViewController: UIViewController {
     
     lazy var priceOfMealLabel: UILabel = {
         let priceOfMealLabel = UILabel()
-        priceOfMealLabel.text = "Price"
+        priceOfMealLabel.text = "$\(selectedMeal!.price!)"
         priceOfMealLabel.textColor = grey
         priceOfMealLabel.font = avenirHeavy20
         priceOfMealLabel.layer.borderColor = grey.cgColor
@@ -119,7 +119,7 @@ extension ChosenMealViewController{
         }
         
         stepper.snp.makeConstraints { (make) in
-            make.top.equalTo(descriptionOfMealLabel.snp.bottom).offset(60)
+            make.top.equalTo(descriptionOfMealLabel.snp.bottom).offset(40)
             make.left.equalToSuperview().offset(150)
             make.right.equalToSuperview().offset(-150)
             make.width.equalTo(100)
