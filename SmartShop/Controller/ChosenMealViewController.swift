@@ -41,11 +41,11 @@ class ChosenMealViewController: UIViewController {
         
         stepper.symbolFont           = UIFont(name: "TrebuchetMS-Bold", size: 20)
         stepper.symbolFontColor      = .black
-        stepper.backgroundColor      = UIColor(hex: 0xc0392b)
+        stepper.backgroundColor      = green
         stepper.thumbWidthRatio      = 0.5
         stepper.thumbText            = ""
         stepper.thumbFont            = UIFont(name: "TrebuchetMS-Bold", size: 20)
-        stepper.thumbBackgroundColor = UIColor(hex: 0xe74c3c)
+        stepper.thumbBackgroundColor = blue
         stepper.thumbTextColor       = .black
         
         stepper.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
@@ -56,8 +56,10 @@ class ChosenMealViewController: UIViewController {
         let priceOfMealLabel = UILabel()
         priceOfMealLabel.text = "Price"
         priceOfMealLabel.textColor = grey
-        priceOfMealLabel.font = avenirSmall16
-//        priceOfMealLabel.border 
+        priceOfMealLabel.font = avenirHeavy20
+        priceOfMealLabel.layer.borderColor = grey.cgColor
+        priceOfMealLabel.layer.borderWidth = 1
+        priceOfMealLabel.textAlignment = .center
         return priceOfMealLabel
     }()
     
@@ -109,9 +111,9 @@ extension ChosenMealViewController{
         }
         
         stepper.snp.makeConstraints { (make) in
-            make.top.equalTo(descriptionOfMealLabel.snp.bottom).offset(40)
-            make.left.equalToSuperview().offset(50)
-            make.right.equalToSuperview().offset(-50)
+            make.top.equalTo(descriptionOfMealLabel.snp.bottom).offset(60)
+            make.left.equalToSuperview().offset(120)
+            make.right.equalToSuperview().offset(-120)
             make.width.equalTo(100)
             make.height.equalTo(40)
             
@@ -120,14 +122,20 @@ extension ChosenMealViewController{
         priceOfMealLabel.snp.makeConstraints { (make) in
             make.top.equalTo(stepper.snp.bottom).offset(30)
             make.left.equalToSuperview().offset(10)
+            make.height.equalTo(45)
+            make.width.equalTo(SCREEN_WIDTH*0.2)
         }
+        priceOfMealLabel.layer.cornerRadius = 5
         
         addToCartButton.snp.makeConstraints { (make) in
             make.top.equalTo(priceOfMealLabel)
-            make.left.equalTo(priceOfMealLabel.snp.right).offset(20)
+            make.left.equalTo(priceOfMealLabel.snp.right).offset(10)
+            make.right.equalToSuperview().offset(-20)
+            make.height.equalTo(45)
         }
-        
-        
+        addToCartButton.layer.cornerRadius = 5
     }
+    
+     
     
 }
