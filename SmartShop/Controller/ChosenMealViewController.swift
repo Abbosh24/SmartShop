@@ -84,12 +84,18 @@ class ChosenMealViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavBar()
         setupUI()
+        styleTextFields()
     }
  
 }
 
 extension ChosenMealViewController{
+    
+    func setupNavBar() {
+        title = selectedMeal?.title
+    }
     
     func setupUI() {
         
@@ -114,11 +120,10 @@ extension ChosenMealViewController{
         
         stepper.snp.makeConstraints { (make) in
             make.top.equalTo(descriptionOfMealLabel.snp.bottom).offset(60)
-            make.left.equalToSuperview().offset(140)
-            make.right.equalToSuperview().offset(-140)
+            make.left.equalToSuperview().offset(150)
+            make.right.equalToSuperview().offset(-150)
             make.width.equalTo(100)
             make.height.equalTo(45)
-            
         }
         
         priceOfMealLabel.snp.makeConstraints { (make) in
@@ -127,7 +132,6 @@ extension ChosenMealViewController{
             make.height.equalTo(45)
             make.width.equalTo(SCREEN_WIDTH*0.2)
         }
-        priceOfMealLabel.layer.cornerRadius = 5
         
         addToCartButton.snp.makeConstraints { (make) in
             make.top.equalTo(priceOfMealLabel)
@@ -135,9 +139,12 @@ extension ChosenMealViewController{
             make.right.equalToSuperview().offset(-20)
             make.height.equalTo(45)
         }
-        addToCartButton.layer.cornerRadius = 5
     }
     
-     
+    func styleTextFields() {
+        stepper.layer.cornerRadius = 20
+        priceOfMealLabel.layer.cornerRadius = 5
+        addToCartButton.layer.cornerRadius = 5
+    }
     
 }
