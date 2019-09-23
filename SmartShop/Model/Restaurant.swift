@@ -54,6 +54,7 @@ struct Item: Mappable {
     var title: String?
     var details: String?
     var price: Double?
+    var image_url: String?
     
     init?(map: Map) {
     }
@@ -62,5 +63,6 @@ struct Item: Mappable {
         title <- map["title"]
         details <- map["details"]
         price <- map["price"]
+        image_url <- map["image_url"]
     }
 }

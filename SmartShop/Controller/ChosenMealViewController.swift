@@ -8,16 +8,18 @@
 
 import UIKit
 import SnappingStepper
+import Kingfisher
 
 class ChosenMealViewController: UIViewController {
     
     var selectedMeal: Item?
     
-    lazy var mealImage: UIImageView = {
-        let mealImage = UIImageView()
-        mealImage.contentMode = .scaleAspectFill
-        mealImage.image = UIImage(named: "breakfast")
-        return mealImage
+    lazy var mealImageView: UIImageView = {
+        let mealImageView = UIImageView()
+        mealImageView.contentMode = .scaleAspectFill
+        let url = URL(string: (self.selectedMeal?.image_url)!)
+        mealImageView.setImageFromURL(self.selectedMeal!.image_url!)
+        return mealImageView
     }()
     
     lazy var descriptionOfMealLabel: UILabel = {
@@ -99,13 +101,13 @@ extension ChosenMealViewController{
     
     func setupUI() {
         
-        self.view.addSubview(mealImage)
+        self.view.addSubview(mealImageView)
         self.view.addSubview(descriptionOfMealLabel)
         self.view.addSubview(stepper)
         self.view.addSubview(priceOfMealLabel)
         self.view.addSubview(addToCartButton)
         
-        mealImage.snp.makeConstraints { (make) in
+        mealImageView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(SCREEN_WIDTH*0.1)
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
@@ -113,7 +115,7 @@ extension ChosenMealViewController{
         }
         
         descriptionOfMealLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(mealImage.snp.bottom).offset(35)
+            make.top.equalTo(mealImageView.snp.bottom).offset(35)
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
         }

@@ -71,13 +71,11 @@ extension CategoryMealViewController: UITableViewDelegate, UITableViewDataSource
 
         cell.descriptionOfMealLabel.text = item.details
             
-            if let price = item.price {
-        cell.priceOfMealLabel.text = "\(price)"
-            }
+        if let price = item.price {
+          cell.priceOfMealLabel.text = "\(price)"
+        }
             
-            cell.mealImage.image = UIImage(named: "breakfast")
-//      cell.mealImage.setImageFromURL()
-         
+        cell.mealImageView.setImageFromURL(item.image_url!)
         }
         return cell
     }

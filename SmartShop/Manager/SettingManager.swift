@@ -12,7 +12,7 @@ class SettingManager: NSObject {
     
     static let shared: SettingManager = { SettingManager() }()
     lazy var apiURL: String = {
-        return "https://jsonstorage.net/api/items/b5cfd5ee-d94f-4eac-ad8f-fe9d48ef7d8b"
+        return "https://jsonstorage.net/api/items/4d1c10b0-dbdf-4048-8193-c9a675c00601"
     }()
     
     

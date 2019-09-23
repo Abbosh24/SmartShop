@@ -35,11 +35,11 @@ class CategoryMealTVCell: UITableViewCell {
         return priceOfMealLabel
     }()
     
-    lazy var mealImage: UIImageView = {
-        let mealImage = UIImageView()
-        mealImage.contentMode = .scaleAspectFill
-        mealImage.image = UIImage(named: "breakfast")
-        return mealImage
+    lazy var mealImageView: UIImageView = {
+        let mealImageView = UIImageView()
+        mealImageView.contentMode = .scaleAspectFit
+        mealImageView.image = UIImage(named: "breakfast")
+        return mealImageView
     }()
     
     
@@ -49,17 +49,17 @@ class CategoryMealTVCell: UITableViewCell {
         contentView.addSubview(nameOfMealLabel)
         contentView.addSubview(descriptionOfMealLabel)
         contentView.addSubview(priceOfMealLabel)
-        contentView.addSubview(mealImage)
+        contentView.addSubview(mealImageView)
         
-        mealImage.snp.makeConstraints { (make) in
+        mealImageView.snp.makeConstraints { (make) in
             make.height.equalToSuperview().offset(-20)
-            make.width.equalTo(mealImage.snp.height)
+            make.width.equalTo(mealImageView.snp.height)
             make.right.equalToSuperview().offset(-40)
             make.centerY.equalToSuperview()
         }
         
         nameOfMealLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(mealImage)
+            make.top.equalTo(mealImageView)
             
             make.left.equalTo(10)
         }
@@ -71,7 +71,7 @@ class CategoryMealTVCell: UITableViewCell {
         }
         
         priceOfMealLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(mealImage)
+            make.bottom.equalTo(mealImageView)
             make.left.equalTo(10)
         }
         
