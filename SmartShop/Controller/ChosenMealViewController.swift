@@ -45,7 +45,7 @@ class ChosenMealViewController: UIViewController {
         stepper.layer.borderWidth = 1
 //        stepper.backgroundColor      = .white
         stepper.thumbWidthRatio      = 0.5
-        stepper.thumbText            = ""
+        stepper.thumbText            = "0"
         stepper.thumbFont            = UIFont(name: "TrebuchetMS-Bold", size: 20)
 //        stepper.thumbBackgroundColor = green
         stepper.thumbTextColor       = .black
@@ -114,10 +114,10 @@ extension ChosenMealViewController{
         
         stepper.snp.makeConstraints { (make) in
             make.top.equalTo(descriptionOfMealLabel.snp.bottom).offset(60)
-            make.left.equalToSuperview().offset(120)
-            make.right.equalToSuperview().offset(-120)
+            make.left.equalToSuperview().offset(140)
+            make.right.equalToSuperview().offset(-140)
             make.width.equalTo(100)
-            make.height.equalTo(40)
+            make.height.equalTo(45)
             
         }
         
