@@ -1,4 +1,5 @@
 import UIKit
+import PKHUD
 import SideMenuSwift
 import Kingfisher
 
@@ -18,13 +19,15 @@ class MenuViewController: UIViewController {
     }
     
     func getMenuCategories() {
+        HUD.show(.progress)
         RestaurantService.shared.getRestaurant(success: { (code, restaurant) in
+            HUD.hide()
             // The parent Model is assigned -> all child models are assigned too. That means our Restaurant.swift models (ALL!!) are ready.
             self.restaurant = restaurant
             print(code, restaurant)
             self.collectionView.reloadData()
-            //S IMAGE RAZBEREMSA
         }) { (code) in
+            HUD.hide()
             print("Failed: \(code)")
         }
     }
