@@ -68,11 +68,13 @@ class SideMenuViewController: UIViewController {
     
     @objc func menuTapped() {
         let menuVC = SideMenuController(contentViewController: MainNavigationController(rootViewController: MenuViewController()), menuViewController: SideMenuViewController())
+        menuVC.modalPresentationStyle = .fullScreen
         self.present(menuVC, animated: false, completion: nil)
     }
     
     @objc func reservationsTapped() {
         let reservationsVC = SideMenuController(contentViewController: MainNavigationController(rootViewController: ReservationsViewController()), menuViewController: SideMenuViewController())
+        reservationsVC.modalPresentationStyle = .fullScreen
         self.present(reservationsVC, animated: false, completion: nil)
     }
     
@@ -83,6 +85,7 @@ class SideMenuViewController: UIViewController {
             SCLAlertView().showError("", subTitle: error.localizedDescription)
         }
         let navCrWelcome = UINavigationController(rootViewController: WelcomeViewController())
+        navCrWelcome.modalPresentationStyle = .fullScreen
         self.present(navCrWelcome, animated: true, completion: nil)
     }
 
