@@ -4,6 +4,27 @@ import SideMenuSwift
 import Kingfisher
 
 class ReservationsViewController: RestaurantViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        getRestaurant()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavBar()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        styleTextFields()
+    }
+    
+    //MARK: - Properties
+    
+    var restaurant: RestaurantModel?
+    
     lazy var foodImage: UIImageView = {
         let foodImage = UIImageView()
         return foodImage
@@ -71,20 +92,7 @@ class ReservationsViewController: RestaurantViewController {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupNavBar()
-        setupUI()
-        getRestaurant()
-        }
-
-    var restaurant: RestaurantModel?
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        styleTextFields()
-    }
-    }
+}
 
 extension ReservationsViewController {
     
