@@ -63,13 +63,7 @@ class SideMenuViewController: UIViewController {
     }
     
     //MARK: - HELPERS
-    
-    func parent() -> UIViewController {
-        let parentMenuC = self.parent as? SideMenuController
-        let contentNC = parentMenuC?.contentViewController as? UINavigationController
-        return contentNC!.viewControllers[0]
-    }
-    
+
     func presentUILayer(_ contentViewController: UINavigationController, _ menuViewController: UIViewController? = SideMenuViewController(), _ modalPresentationStyle: UIModalPresentationStyle? = .fullScreen) {
         
         self.sideMenuController?.hideMenu()
