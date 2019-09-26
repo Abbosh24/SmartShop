@@ -7,13 +7,12 @@ class MenuViewController: RestaurantViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavBarUI()
-        
         getMenuCategories()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupNavBarUI()
         setupUpCollectionView()
     }
     
