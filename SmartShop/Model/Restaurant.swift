@@ -1,11 +1,3 @@
-//
-//  Info.swift
-//  SmartShop
-//
-//  Created by 1 on 9/16/19.
-//  Copyright © 2019 1. All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 
@@ -22,10 +14,10 @@ struct RestaurantModel: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        restaurant_name <- map["restaurant_name"]
-        restaurant_address <- map["restaurant_address"]
+        restaurant_name     <- map["restaurant_name"]
+        restaurant_address  <- map["restaurant_address"]
         restaurant_imageURL <- map["restaurant_image_url"]
-        popular_categories <- map["popular_categories"]
+        popular_categories  <- map["popular_categories"]
     }
 
 }
@@ -41,10 +33,10 @@ struct PopularCategoryModel: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        id <- map["id"]
-        title <- map["title"]
+        id        <- map["id"]
+        title     <- map["title"]
         image_url <- map["image_url"]
-        items <- map["items"]
+        items     <- map["items"]
     }
     
 }
@@ -60,9 +52,9 @@ struct Item: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        title <- map["title"]
-        details <- map["details"]
-        price <- map["price"]
+        title     <- map["title"]
+        details   <- map["details"]
+        price     <- map["price"]
         image_url <- map["image_url"]
     }
 }

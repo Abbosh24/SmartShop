@@ -11,6 +11,12 @@
 		1C2C63C32329670D00C9C35D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2C63C22329670D00C9C35D /* SignUpViewController.swift */; };
 		1C2C63C5232968AD00C9C35D /* CalculateOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2C63C4232968AD00C9C35D /* CalculateOffset.swift */; };
 		1C2C63C72329713400C9C35D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2C63C62329713400C9C35D /* Extensions.swift */; };
+		1C828FF1233CA23B0083D801 /* PopularCategoriesTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C828FEF233CA23B0083D801 /* PopularCategoriesTVCell.swift */; };
+		1C828FF2233CA23B0083D801 /* PopularCategoriesTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C828FF0233CA23B0083D801 /* PopularCategoriesTVCell.xib */; };
+		1C828FF5233CA24C0083D801 /* BestDealsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C828FF3233CA24C0083D801 /* BestDealsTVCell.swift */; };
+		1C828FF6233CA24C0083D801 /* BestDealsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C828FF4233CA24C0083D801 /* BestDealsTVCell.xib */; };
+		1C828FF9233CA2620083D801 /* MostPopularTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C828FF7233CA2620083D801 /* MostPopularTVCell.swift */; };
+		1C828FFA233CA2620083D801 /* MostPopularTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C828FF8233CA2620083D801 /* MostPopularTVCell.xib */; };
 		634D989B233A2D6F006D5D8A /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634D989A233A2D6F006D5D8A /* CartViewController.swift */; };
 		634D989E233A2FEF006D5D8A /* CartItemTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634D989C233A2FEF006D5D8A /* CartItemTVCell.swift */; };
 		634D989F233A2FEF006D5D8A /* CartItemTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634D989D233A2FEF006D5D8A /* CartItemTVCell.xib */; };
@@ -46,6 +52,12 @@
 		1C2C63C22329670D00C9C35D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1C2C63C4232968AD00C9C35D /* CalculateOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateOffset.swift; sourceTree = "<group>"; };
 		1C2C63C62329713400C9C35D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1C828FEF233CA23B0083D801 /* PopularCategoriesTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCategoriesTVCell.swift; sourceTree = "<group>"; };
+		1C828FF0233CA23B0083D801 /* PopularCategoriesTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCategoriesTVCell.xib; sourceTree = "<group>"; };
+		1C828FF3233CA24C0083D801 /* BestDealsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestDealsTVCell.swift; sourceTree = "<group>"; };
+		1C828FF4233CA24C0083D801 /* BestDealsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestDealsTVCell.xib; sourceTree = "<group>"; };
+		1C828FF7233CA2620083D801 /* MostPopularTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularTVCell.swift; sourceTree = "<group>"; };
+		1C828FF8233CA2620083D801 /* MostPopularTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MostPopularTVCell.xib; sourceTree = "<group>"; };
 		634D989A233A2D6F006D5D8A /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		634D989C233A2FEF006D5D8A /* CartItemTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemTVCell.swift; sourceTree = "<group>"; };
 		634D989D233A2FEF006D5D8A /* CartItemTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemTVCell.xib; sourceTree = "<group>"; };
@@ -140,6 +152,12 @@
 				634D98A1233A45E0006D5D8A /* TotalTVCell.xib */,
 				637625C52332200700D5822E /* CategoryMealTVCell.swift */,
 				637625C62332200700D5822E /* CategoryMealTVCell.xib */,
+				1C828FEF233CA23B0083D801 /* PopularCategoriesTVCell.swift */,
+				1C828FF0233CA23B0083D801 /* PopularCategoriesTVCell.xib */,
+				1C828FF3233CA24C0083D801 /* BestDealsTVCell.swift */,
+				1C828FF4233CA24C0083D801 /* BestDealsTVCell.xib */,
+				1C828FF7233CA2620083D801 /* MostPopularTVCell.swift */,
+				1C828FF8233CA2620083D801 /* MostPopularTVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,7 +324,10 @@
 				63FE10862328F37B000247C4 /* Assets.xcassets in Resources */,
 				63E367F723299806008C003E /* GoogleService-Info.plist in Resources */,
 				637625C82332200700D5822E /* CategoryMealTVCell.xib in Resources */,
+				1C828FF6233CA24C0083D801 /* BestDealsTVCell.xib in Resources */,
 				634D989F233A2FEF006D5D8A /* CartItemTVCell.xib in Resources */,
+				1C828FFA233CA2620083D801 /* MostPopularTVCell.xib in Resources */,
+				1C828FF2233CA23B0083D801 /* PopularCategoriesTVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,11 +389,14 @@
 				63DF9C4D232F7928008F1174 /* Restaurant.swift in Sources */,
 				63DF9C53232F809C008F1174 /* SettingManager.swift in Sources */,
 				637625C72332200700D5822E /* CategoryMealTVCell.swift in Sources */,
+				1C828FF5233CA24C0083D801 /* BestDealsTVCell.swift in Sources */,
 				63D95E732331023B0022347E /* MenuViewController.swift in Sources */,
 				63FE107F2328F37A000247C4 /* AppDelegate.swift in Sources */,
 				63FE10932328FC1F000247C4 /* Constants.swift in Sources */,
 				1C2C63C32329670D00C9C35D /* SignUpViewController.swift in Sources */,
 				634D989E233A2FEF006D5D8A /* CartItemTVCell.swift in Sources */,
+				1C828FF9233CA2620083D801 /* MostPopularTVCell.swift in Sources */,
+				1C828FF1233CA23B0083D801 /* PopularCategoriesTVCell.swift in Sources */,
 				638FC38D232AB959006F1DFF /* FrontViewController.swift in Sources */,
 				1C2C63C5232968AD00C9C35D /* CalculateOffset.swift in Sources */,
 				634D98A2233A45E0006D5D8A /* TotalTVCell.swift in Sources */,
