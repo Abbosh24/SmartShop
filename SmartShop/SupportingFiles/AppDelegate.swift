@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import SideMenuSwift
 import Firebase
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        //PATH FOR REALM
+        print(Realm.Configuration.defaultConfiguration.fileURL as Any)
         
         window?.backgroundColor = .white
         window = UIWindow(frame: UIScreen.main.bounds)

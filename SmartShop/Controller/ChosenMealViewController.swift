@@ -9,10 +9,14 @@
 import UIKit
 import SnappingStepper
 import Kingfisher
+import SCLAlertView
+import RealmSwift
+
 
 class ChosenMealViewController: UIViewController {
     
     var selectedMeal: Item?
+    let realm = try! Realm()
     
     lazy var mealImageView: UIImageView = {
         let mealImageView = UIImageView()
@@ -36,7 +40,7 @@ class ChosenMealViewController: UIViewController {
         stepper.continuous   = true
         stepper.autorepeat   = true
         stepper.wraps        = false
-        stepper.minimumValue = 0
+        stepper.minimumValue = 1
         stepper.maximumValue = 100
         stepper.stepValue    = 1
         stepper.style = .rounded
@@ -47,7 +51,7 @@ class ChosenMealViewController: UIViewController {
         stepper.layer.borderWidth = 1
         stepper.backgroundColor      = .white
         stepper.thumbWidthRatio      = 0.5
-        stepper.thumbText            = "0"
+        stepper.thumbText            = "\(Int(stepper.value))"
         stepper.thumbFont            = UIFont(name: "TrebuchetMS-Bold", size: 20)
         stepper.thumbBackgroundColor = .white
         stepper.thumbTextColor       = .black
@@ -73,7 +77,7 @@ class ChosenMealViewController: UIViewController {
         addToCartButton.titleLabel?.font = avenirHeavy20
         addToCartButton.setTitleColor(.white, for: .normal)
         addToCartButton.backgroundColor = green
-//        addToCartButton.addTarget(self, action: #selector(addToCarTapped), for: .touchUpInside)
+        addToCartButton.addTarget(self, action: #selector(addToCartTapped), for: .touchUpInside)
         return addToCartButton
     }()
     
@@ -81,6 +85,29 @@ class ChosenMealViewController: UIViewController {
         
         print(stepper.value)
         stepper.thumbText = "\(Int(stepper.value))"
+        priceLabelChenged()
+    }
+        
+    func priceLabelChenged() {
+            priceOfMealLabel.text = "$\(stepper.value*selectedMeal!.price!)"
+    }
+    
+    @objc func addToCartTapped() {
+        
+        do {
+            try self.realm.write {
+                let newCartItem = CartItem(title: selectedMeal!.title!, price: stepper.value*selectedMeal!.price!, count: Int(stepper.value))
+                self.realm.add(newCartItem)
+                //SAVED CART ITEM TO REALM
+            }
+        } catch {
+            
+        }
+            
+        
+        let alertView = SCLAlertView()
+        
+        alertView.showSuccess("Success!", subTitle: "Added to cart!")
     }
     
     
@@ -89,6 +116,7 @@ class ChosenMealViewController: UIViewController {
         setupNavBar()
         setupUI()
         styleTextFields()
+      
     }
  
 }

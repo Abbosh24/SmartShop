@@ -11,6 +11,9 @@ class MainViewController: UIViewController {
     }
     
     @objc func cartTapped() {
+        let cartVC = CartViewController()
+        cartVC.view.backgroundColor = .white
+        self.navigationController?.pushViewController(cartVC, animated: true)
         
     }
     

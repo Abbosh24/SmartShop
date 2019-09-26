@@ -18,5 +18,6 @@ pod 'Stripe'
 pod 'SideMenuSwift'
 pod 'Kingfisher'
 pod 'SnappingStepper'
+pod 'RealmSwift'
 
 end
