@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1D7B77233C93550050BEE0 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D7B76233C93550050BEE0 /* RestaurantViewController.swift */; };
 		1C2C63C32329670D00C9C35D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2C63C22329670D00C9C35D /* SignUpViewController.swift */; };
 		1C2C63C5232968AD00C9C35D /* CalculateOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2C63C4232968AD00C9C35D /* CalculateOffset.swift */; };
 		1C2C63C72329713400C9C35D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2C63C62329713400C9C35D /* Extensions.swift */; };
@@ -20,8 +21,7 @@
 		637625C72332200700D5822E /* CategoryMealTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637625C52332200700D5822E /* CategoryMealTVCell.swift */; };
 		637625C82332200700D5822E /* CategoryMealTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637625C62332200700D5822E /* CategoryMealTVCell.xib */; };
 		637625CA2332B05500D5822E /* ChosenMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637625C92332B05500D5822E /* ChosenMealViewController.swift */; };
-		638FC38A232AB853006F1DFF /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FC389232AB853006F1DFF /* MainNavigationController.swift */; };
-		638FC38D232AB959006F1DFF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FC38C232AB959006F1DFF /* MainViewController.swift */; };
+		638FC38D232AB959006F1DFF /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FC38C232AB959006F1DFF /* FrontViewController.swift */; };
 		63ABD0322338EF79005E0483 /* Pods_SmartShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63ABD0312338EF79005E0483 /* Pods_SmartShop.framework */; };
 		63B07B5A232C1EC00096210E /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B07B59232C1EC00096210E /* SideMenuViewController.swift */; };
 		63C10A8F232D77B500FEAEA6 /* ReservationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C10A8E232D77B500FEAEA6 /* ReservationsViewController.swift */; };
@@ -42,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C1D7B76233C93550050BEE0 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		1C2C63C22329670D00C9C35D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1C2C63C4232968AD00C9C35D /* CalculateOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateOffset.swift; sourceTree = "<group>"; };
 		1C2C63C62329713400C9C35D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -55,8 +56,7 @@
 		637625C52332200700D5822E /* CategoryMealTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMealTVCell.swift; sourceTree = "<group>"; };
 		637625C62332200700D5822E /* CategoryMealTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryMealTVCell.xib; sourceTree = "<group>"; };
 		637625C92332B05500D5822E /* ChosenMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenMealViewController.swift; sourceTree = "<group>"; };
-		638FC389232AB853006F1DFF /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		638FC38C232AB959006F1DFF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		638FC38C232AB959006F1DFF /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		63ABD0312338EF79005E0483 /* Pods_SmartShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_SmartShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B07B59232C1EC00096210E /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		63C10A8E232D77B500FEAEA6 /* ReservationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +93,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C1D7B75233C927A0050BEE0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1C1D7B76233C93550050BEE0 /* RestaurantViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		1C1D7B78233C93930050BEE0 /* Side Menu */ = {
+			isa = PBXGroup;
+			children = (
+				63B07B59232C1EC00096210E /* SideMenuViewController.swift */,
+			);
+			path = "Side Menu";
+			sourceTree = "<group>";
+		};
+		1C828FEE233C94FE0083D801 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				63FE10802328F37A000247C4 /* WelcomeViewController.swift */,
+				63FE10942329588E000247C4 /* LogInViewController.swift */,
+				1C2C63C22329670D00C9C35D /* SignUpViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		5CD5403C42E09E864F6FCF59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,13 +218,11 @@
 		63FE10912328F40A000247C4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				638FC389232AB853006F1DFF /* MainNavigationController.swift */,
-				63FE10802328F37A000247C4 /* WelcomeViewController.swift */,
-				63FE10942329588E000247C4 /* LogInViewController.swift */,
-				1C2C63C22329670D00C9C35D /* SignUpViewController.swift */,
-				638FC38C232AB959006F1DFF /* MainViewController.swift */,
+				1C1D7B75233C927A0050BEE0 /* Base */,
+				1C828FEE233C94FE0083D801 /* Auth */,
+				1C1D7B78233C93930050BEE0 /* Side Menu */,
+				638FC38C232AB959006F1DFF /* FrontViewController.swift */,
 				634D989A233A2D6F006D5D8A /* CartViewController.swift */,
-				63B07B59232C1EC00096210E /* SideMenuViewController.swift */,
 				63C10A8E232D77B500FEAEA6 /* ReservationsViewController.swift */,
 				63D95E712331023B0022347E /* MenuViewController.swift */,
 				637625BD23321A0800D5822E /* CategoryMealViewController.swift */,
@@ -348,14 +372,14 @@
 				63FE107F2328F37A000247C4 /* AppDelegate.swift in Sources */,
 				63FE10932328FC1F000247C4 /* Constants.swift in Sources */,
 				1C2C63C32329670D00C9C35D /* SignUpViewController.swift in Sources */,
-				638FC38A232AB853006F1DFF /* MainNavigationController.swift in Sources */,
 				634D989E233A2FEF006D5D8A /* CartItemTVCell.swift in Sources */,
-				638FC38D232AB959006F1DFF /* MainViewController.swift in Sources */,
+				638FC38D232AB959006F1DFF /* FrontViewController.swift in Sources */,
 				1C2C63C5232968AD00C9C35D /* CalculateOffset.swift in Sources */,
 				634D98A2233A45E0006D5D8A /* TotalTVCell.swift in Sources */,
 				63D95E7723313DD50022347E /* MenuCVCell.swift in Sources */,
 				634D989B233A2D6F006D5D8A /* CartViewController.swift in Sources */,
 				63B07B5A232C1EC00096210E /* SideMenuViewController.swift in Sources */,
+				1C1D7B77233C93550050BEE0 /* RestaurantViewController.swift in Sources */,
 				637625BE23321A0800D5822E /* CategoryMealViewController.swift in Sources */,
 				1C2C63C72329713400C9C35D /* Extensions.swift in Sources */,
 				637625CA2332B05500D5822E /* ChosenMealViewController.swift in Sources */,

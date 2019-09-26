@@ -93,7 +93,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return savedItems?.count ?? 0 // need to connect with alomofire later
+            return savedItems?.count ?? 0
         }
         return 1
     }

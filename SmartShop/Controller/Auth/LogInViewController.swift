@@ -60,7 +60,7 @@ class LogInViewController: UIViewController {
     }()
     
     @objc func logInTapped() {
-        let navController = SideMenuController(contentViewController: UINavigationController(rootViewController: MainViewController()), menuViewController: SideMenuViewController()) 
+        let navController = SideMenuController(contentViewController: UINavigationController(rootViewController: FrontViewController()), menuViewController: SideMenuViewController()) 
         navController.view.backgroundColor = .white
         navController.modalPresentationStyle = .fullScreen
         self.present(navController, animated: true, completion: nil)
@@ -86,9 +86,9 @@ class LogInViewController: UIViewController {
                 }
                 if currentUser != nil && currentUser!.isEmailVerified {
                     HUD.hide()
-                    let mainVC = MainViewController()
+                    let mainVC = FrontViewController()
                     mainVC.modalPresentationStyle = .fullScreen
-                    self.present(MainViewController(), animated: true)
+                    self.present(FrontViewController(), animated: true)
                 }
             }
         }

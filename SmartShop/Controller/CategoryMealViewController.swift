@@ -35,6 +35,8 @@ class CategoryMealViewController: UIViewController {
     }
     
     func setupUI() {
+        self.view.backgroundColor = .white
+        
         self.view.addSubview(tableView)
         
         let nib = UINib.init(nibName: "CategoryMealTVCell", bundle: nil)

@@ -1,8 +1,9 @@
 import UIKit
+import PKHUD
 import SideMenuSwift
 import Kingfisher
 
-class ReservationsViewController: UIViewController {
+class ReservationsViewController: RestaurantViewController {
     lazy var foodImage: UIImageView = {
         let foodImage = UIImageView()
         return foodImage
@@ -70,17 +71,6 @@ class ReservationsViewController: UIViewController {
         
     }
     
-    @objc func cartTapped() {
-    }
-
-    @objc func hamburgerTapped(){
-        //1. Set menu width
-        SideMenuController.preferences.basic.menuWidth = MENU_WIDTH
-        self.sideMenuController?.revealMenu()
-        //        self.sideMenuController?.hideMenu()
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
@@ -99,31 +89,24 @@ class ReservationsViewController: UIViewController {
 extension ReservationsViewController {
     
     func getRestaurant() {
+        HUD.show(.progress)
         RestaurantService.shared.getRestaurant(success: { (code, restaurant) in
+            HUD.hide()
             self.restaurant = restaurant
             self.foodImage.setImageFromURL((self.restaurant?.restaurant_imageURL!)!)
             self.foodNameLabel.text = self.restaurant?.restaurant_name
             self.placeNameLabel.text = self.restaurant?.restaurant_address
         }) { (code) in
+            HUD.hide()
             print("Failed: \(code)")
       }
     }
     
     func setupNavBar() {
         title = "Reservations"
-        
-        let basketButton = UIBarButtonItem(image: UIImage(named: "cart"), style: .plain, target: self, action: #selector(cartTapped))
-        navigationItem.rightBarButtonItem = basketButton
-        
-        let hamburgerButton = UIBarButtonItem(image: UIImage(named: "hamburgerButton"), style: .plain, target: self, action: #selector(hamburgerTapped))
-        navigationItem.leftBarButtonItem = hamburgerButton
     }
     
     func setupUI() {
-        
-        
-//        let viewOffset =
-        
         self.view.addSubview(foodImage)
         self.view.addSubview(foodNameLabel)
         self.view.addSubview(placeNameLabel)
@@ -139,10 +122,10 @@ extension ReservationsViewController {
             make.height.equalTo(SCREEN_HEIGHT*0.25)
         }
             
-            foodNameLabel.snp.makeConstraints { (make) in
-                make.top.equalTo(foodImage.snp.bottom).offset(20)
-                make.left.equalToSuperview().offset(SCREEN_WIDTH*0.2)
-                make.right.equalToSuperview().offset(SCREEN_WIDTH*(-0.2))
+        foodNameLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(foodImage.snp.bottom).offset(20)
+            make.left.equalToSuperview().offset(SCREEN_WIDTH*0.2)
+            make.right.equalToSuperview().offset(SCREEN_WIDTH*(-0.2))
             }
         
         placeNameLabel.snp.makeConstraints { (make) in

@@ -3,9 +3,8 @@ import PKHUD
 import SideMenuSwift
 import Kingfisher
 
-class MenuViewController: UIViewController {
+class MenuViewController: RestaurantViewController {
     
-    //Here we get our restaurant. And Objectmapper instantly assigns all properties from JSON
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBarUI()
@@ -48,22 +47,6 @@ class MenuViewController: UIViewController {
         return collectionView
     }()
     
-    //MARK: - Action
-    
-    @objc func cartTapped() {
-    }
-    
-    @objc func hamburgerTapped(){
-        //1. Set menu width
-        SideMenuController.preferences.basic.menuWidth = MENU_WIDTH
-        self.sideMenuController?.revealMenu()
-        //        self.sideMenuController?.hideMenu()
-    }
-    
-    //1. Get data
-    //2. set data in CV (We had that same problem, we got data, but nothing showed. WHY? IN SMARTSHOP)
-    //3.
-    
 }
 
 extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -74,7 +57,6 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCVCell", for: indexPath) as! MenuCVCell
-        let url = URL(string: (self.restaurant?.popular_categories?[indexPath.item].image_url)!)
         cell.foodImageView.setImageFromURL((self.restaurant?.popular_categories?[indexPath.item].image_url!)!)
             cell.foodNameLabel.text = self.restaurant?.popular_categories?[indexPath.item].title
         cell.backgroundColor = .blue
@@ -111,14 +93,7 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension MenuViewController {
     func setupNavBarUI() {
-        
         title = "Menu"
-        
-        let basketButton = UIBarButtonItem(image: UIImage(named: "cart"), style: .plain, target: self, action: #selector(cartTapped))
-        navigationItem.rightBarButtonItem = basketButton
-        
-        let hamburgerButton = UIBarButtonItem(image: UIImage(named: "hamburgerButton"), style: .plain, target: self, action: #selector(hamburgerTapped))
-        navigationItem.leftBarButtonItem = hamburgerButton
     }
     
     func setupUpCollectionView() {

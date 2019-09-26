@@ -128,6 +128,7 @@ extension ChosenMealViewController{
     }
     
     func setupUI() {
+        self.view.backgroundColor = .white
         
         self.view.addSubview(mealImageView)
         self.view.addSubview(descriptionOfMealLabel)

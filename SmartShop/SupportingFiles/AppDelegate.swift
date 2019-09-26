@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if Auth.auth().currentUser != nil {
             print("Logged In")
-            window?.rootViewController = SideMenuController(contentViewController: MainNavigationController(rootViewController: MainViewController()), menuViewController: SideMenuViewController())
+            window?.rootViewController = SideMenuController(contentViewController: UINavigationController(rootViewController: FrontViewController()), menuViewController: SideMenuViewController())
         } else {
             print("Not logged in")
             window?.rootViewController = UINavigationController(rootViewController: WelcomeViewController())

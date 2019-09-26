@@ -5,9 +5,10 @@ import SideMenuSwift
 
 class SideMenuViewController: UIViewController {
     
+    
+    //MARK: - Properties
+    
     lazy var homeButton: UIButton = {
-        
-       
         let homeButton = customButton("Home", UIImage(named: "home")!)
          homeButton.addTarget(self, action: #selector(homeButtonTapped), for: .touchUpInside)
         
@@ -61,22 +62,38 @@ class SideMenuViewController: UIViewController {
         return button
     }
     
-    @objc func homeButtonTapped() {
+    //MARK: - HELPERS
+    
+    func parent() -> UIViewController {
+        let parentMenuC = self.parent as? SideMenuController
+        let contentNC = parentMenuC?.contentViewController as? UINavigationController
+        return contentNC!.viewControllers[0]
+    }
+    
+    func presentUILayer(_ contentViewController: UINavigationController, _ menuViewController: UIViewController? = SideMenuViewController(), _ modalPresentationStyle: UIModalPresentationStyle? = .fullScreen) {
+        
         self.sideMenuController?.hideMenu()
-//        self.present(UINavigationController(rootViewController: MainViewController()), animated: true, completion: nil)
+        
+        let sideMenuController = SideMenuController(contentViewController: contentViewController, menuViewController: menuViewController!)
+        sideMenuController.modalPresentationStyle = modalPresentationStyle!
+        
+         self.present(sideMenuController, animated: false, completion: nil)
+    }
+    
+    //MARK: - ACTIONS
+    
+    @objc func homeButtonTapped() {
+        presentUILayer(UINavigationController(rootViewController: FrontViewController()))
     }
     
     @objc func menuTapped() {
-        let menuVC = SideMenuController(contentViewController: MainNavigationController(rootViewController: MenuViewController()), menuViewController: SideMenuViewController())
-        menuVC.modalPresentationStyle = .fullScreen
-        self.present(menuVC, animated: false, completion: nil)
+        presentUILayer(UINavigationController(rootViewController: MenuViewController()))
     }
     
     @objc func reservationsTapped() {
-        let reservationsVC = SideMenuController(contentViewController: MainNavigationController(rootViewController: ReservationsViewController()), menuViewController: SideMenuViewController())
-        reservationsVC.modalPresentationStyle = .fullScreen
-        self.present(reservationsVC, animated: false, completion: nil)
+        presentUILayer(UINavigationController(rootViewController: ReservationsViewController()))
     }
+    
     
     @objc func logOutTapped() {
         do {
