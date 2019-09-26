@@ -7,9 +7,9 @@ class FrontViewController: RestaurantViewController {
     
     //MARK: - Properties
     
-    let popularCategoriesCellId     = "PopularCategoriesTVCell"
-    let bestDealsCellId        = "BestDealsTVCell"
-    let mostPopularCellId = "MostPopularTVCell"
+    let popularCategoriesCellId  = "PopularCategoriesTVCell"
+    let bestDealsCellId          = "BestDealsTVCell"
+    let mostPopularCellId        = "MostPopularTVCell"
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
