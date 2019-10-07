@@ -44,23 +44,30 @@ class FrontViewController: RestaurantViewController {
             self.bestDeals = restaurant.best_deals
             
             for bestDeal in self.bestDeals! {
-                self.bestDealsImagesPaths.append((bestDeal.deal_image_url!, bestDeal.deal_title!))
+            self.bestDealsImagesPaths.append((bestDeal.deal_title ?? "", bestDeal.deal_image_url ?? ""))
             }
             
             print("image paths of best deals: \(self.bestDealsImagesPaths)")
             
-//            self.setImages()
+            self.displayBestDeals()
             self.tableView.reloadData()
         }) { (code) in }
     }
     
-//    func setImages() {
-//        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! BestDealsTVCell
-//        cell.mealImageSlider.setCarouselData(paths: bestDealsImagesPaths.map({ (tuple) -> T in
-//            let tuple = tuple as! (String, String)
-//        }), describedTitle: [], isAutoScroll: true, timer: 5.0, defaultImage: "breakfast")
-//        self.tableView.reloadData()
-//    }
+    func displayBestDeals() {
+        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! BestDealsTVCell
+        cell.mealImageSlider.delegate = self
+        
+        let titles = self.bestDeals!.map({
+            return $0.deal_title
+        })
+        let imageUrls = self.bestDeals!.map({
+            return $0.deal_image_url
+        })
+        
+        cell.mealImageSlider.setCarouselData(paths: imageUrls as! [String], describedTitle: titles as! [String], isAutoScroll: true, timer: 5.0, defaultImage: "breakfast")
+        self.tableView.reloadData()
+    }
 
 
 
@@ -152,4 +159,26 @@ extension FrontViewController {
             make.edges.equalToSuperview()
         }
     }
+}
+
+extension FrontViewController: AACarouselDelegate {
+    
+    func didSelectCarouselView(_ view: AACarousel, _ index: Int) {
+        
+    }
+    
+    func callBackFirstDisplayView(_ imageView: UIImageView, _ url: [String], _ index: Int) {
+        
+    }
+    
+    func downloadImages(_ url: String, _ index: Int) {
+        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! BestDealsTVCell
+        cell.mealImageSlider.delegate = self
+        let imageView = UIImageView()
+        imageView.kf.setImage(with: URL(string: url)!, placeholder: UIImage.init(named: "defaultImage"), options: [], progressBlock: nil, completionHandler: { (downloadImage, error, cacheType, url) in
+            cell.mealImageSlider.images[index] = downloadImage!
+        })
+    }
+    
+    
 }
