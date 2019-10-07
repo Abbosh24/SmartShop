@@ -9,6 +9,7 @@ struct RestaurantModel: Mappable {
     var restaurant_address: String?
     var restaurant_imageURL: String?
     var popular_categories: [PopularCategoryModel]?
+    var best_deals: [BestDealsModel]?
     
     init?(map: Map) {
     }
@@ -18,6 +19,7 @@ struct RestaurantModel: Mappable {
         restaurant_address  <- map["restaurant_address"]
         restaurant_imageURL <- map["restaurant_image_url"]
         popular_categories  <- map["popular_categories"]
+        best_deals          <- map["best_deals"]
     }
 
 }
@@ -38,8 +40,22 @@ struct PopularCategoryModel: Mappable {
         image_url <- map["image_url"]
         items     <- map["items"]
     }
-    
 }
+
+struct BestDealsModel: Mappable {
+    
+    var deal_title: String?
+    var deal_image_url: String?
+    
+    mutating func mapping(map: Map) {
+       deal_title     <- map["deal_title"]
+       deal_image_url <- map["deal_image_url"]
+    }
+    
+    init?(map: Map) {
+    }
+}
+
 
 struct Item: Mappable {
     

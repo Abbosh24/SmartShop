@@ -4,6 +4,7 @@ import UIKit
 
 let avenirHeavy20  = UIFont(name: "Avenir-Heavy", size: 20)
 let avenirHeavy18  = UIFont(name: "Avenir-Heavy", size: 18)
+let avenirHeavy14 = UIFont(name: "Avenir-Heavy", size: 14)
 let avenirMedium18 = UIFont(name: "Avenir-Medium", size: 18)
 let avenirSmall16  = UIFont(name: "Avenir", size: 16)
 

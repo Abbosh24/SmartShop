@@ -60,7 +60,6 @@ class CategoryMealTVCell: UITableViewCell {
         
         nameOfMealLabel.snp.makeConstraints { (make) in
             make.top.equalTo(mealImageView)
-            
             make.left.equalTo(10)
         }
         

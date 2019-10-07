@@ -1,4 +1,5 @@
 PODS:
+  - AACarousel (1.1.1)
   - Alamofire (5.0.0-beta.6)
   - AlamofireObjectMapper (6.1.0):
     - Alamofire (= 5.0.0-beta.6)
@@ -55,23 +56,23 @@ PODS:
   - GoogleDataTransportCCTSupport (1.0.4):
     - GoogleDataTransport (~> 1.2)
     - nanopb
-  - GoogleUtilities/AppDelegateSwizzler (6.3.0):
+  - GoogleUtilities/AppDelegateSwizzler (6.2.5):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (6.3.0)
-  - GoogleUtilities/Logger (6.3.0):
+  - GoogleUtilities/Environment (6.2.5)
+  - GoogleUtilities/Logger (6.2.5):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (6.3.0):
+  - GoogleUtilities/MethodSwizzler (6.2.5):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (6.3.0):
+  - GoogleUtilities/Network (6.2.5):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (6.3.0)"
-  - GoogleUtilities/Reachability (6.3.0):
+  - "GoogleUtilities/NSData+zlib (6.2.5)"
+  - GoogleUtilities/Reachability (6.2.5):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (6.3.0):
+  - GoogleUtilities/UserDefaults (6.2.5):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.2)
   - Kingfisher (5.7.1)
@@ -95,6 +96,7 @@ PODS:
   - Stripe (17.0.1)
 
 DEPENDENCIES:
+  - AACarousel
   - Alamofire
   - AlamofireObjectMapper
   - Firebase
@@ -110,6 +112,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AACarousel
     - Alamofire
     - AlamofireObjectMapper
     - DynamicColor
@@ -139,6 +142,7 @@ SPEC REPOS:
     - Stripe
 
 SPEC CHECKSUMS:
+  AACarousel: e0dbd2d3153c56c36df8aa282553f20fc88e132b
   Alamofire: cd08a4402bd12cacd0c66f23fb12fec8d6b965e4
   AlamofireObjectMapper: cd819bed60ad326e8920a6c524c19744e15bb237
   DynamicColor: c475f66bda1cabf602f2c54ac1171c0c07148a5a
@@ -153,7 +157,7 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 86a82f0e1f20b8eedf8e20326530138fd71409de
   GoogleDataTransport: 8f9897b8e073687f24ca8d3c3a8013dec7d2d1cc
   GoogleDataTransportCCTSupport: 7455d07b98851aa63e4c05a34dad356ca588479e
-  GoogleUtilities: 9c2c544202301110b29f7974a82e77fdcf12bf51
+  GoogleUtilities: e7dc37039b19df7fe543479d3e4a02ac8d11bb69
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
@@ -167,6 +171,6 @@ SPEC CHECKSUMS:
   SnappingStepper: 57c41c94d3fe2665c5601d61d4dcf8f689b957ab
   Stripe: b8e845e12fd6dbc9cb010422b3b6b212e803d308
 
-PODFILE CHECKSUM: aeca5b05412a867040d56145636eca4ede028513
+PODFILE CHECKSUM: c2794317b795a612264dab3be43527bf4c74ce46
 
 COCOAPODS: 1.7.5

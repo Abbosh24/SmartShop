@@ -19,5 +19,6 @@ pod 'SideMenuSwift'
 pod 'Kingfisher'
 pod 'SnappingStepper'
 pod 'RealmSwift'
+pod 'AACarousel'
 
 end

@@ -17,6 +17,8 @@
 		1C828FF6233CA24C0083D801 /* BestDealsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C828FF4233CA24C0083D801 /* BestDealsTVCell.xib */; };
 		1C828FF9233CA2620083D801 /* MostPopularTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C828FF7233CA2620083D801 /* MostPopularTVCell.swift */; };
 		1C828FFA233CA2620083D801 /* MostPopularTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C828FF8233CA2620083D801 /* MostPopularTVCell.xib */; };
+		63154829234933C9009E6C01 /* PopularCategoryCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63154827234933C9009E6C01 /* PopularCategoryCVCell.swift */; };
+		6315482A234933C9009E6C01 /* PopularCategoryCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63154828234933C9009E6C01 /* PopularCategoryCVCell.xib */; };
 		634D989B233A2D6F006D5D8A /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634D989A233A2D6F006D5D8A /* CartViewController.swift */; };
 		634D989E233A2FEF006D5D8A /* CartItemTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634D989C233A2FEF006D5D8A /* CartItemTVCell.swift */; };
 		634D989F233A2FEF006D5D8A /* CartItemTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634D989D233A2FEF006D5D8A /* CartItemTVCell.xib */; };
@@ -58,6 +60,8 @@
 		1C828FF4233CA24C0083D801 /* BestDealsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestDealsTVCell.xib; sourceTree = "<group>"; };
 		1C828FF7233CA2620083D801 /* MostPopularTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularTVCell.swift; sourceTree = "<group>"; };
 		1C828FF8233CA2620083D801 /* MostPopularTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MostPopularTVCell.xib; sourceTree = "<group>"; };
+		63154827234933C9009E6C01 /* PopularCategoryCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCategoryCVCell.swift; sourceTree = "<group>"; };
+		63154828234933C9009E6C01 /* PopularCategoryCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCategoryCVCell.xib; sourceTree = "<group>"; };
 		634D989A233A2D6F006D5D8A /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		634D989C233A2FEF006D5D8A /* CartItemTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemTVCell.swift; sourceTree = "<group>"; };
 		634D989D233A2FEF006D5D8A /* CartItemTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemTVCell.xib; sourceTree = "<group>"; };
@@ -144,22 +148,56 @@
 			isa = PBXGroup;
 			children = (
 				63FE10872328F37B000247C4 /* LaunchScreen.storyboard */,
-				63D95E7523313DD50022347E /* MenuCVCell.swift */,
-				63D95E7623313DD50022347E /* MenuCVCell.xib */,
-				634D989C233A2FEF006D5D8A /* CartItemTVCell.swift */,
-				634D989D233A2FEF006D5D8A /* CartItemTVCell.xib */,
-				634D98A0233A45E0006D5D8A /* TotalTVCell.swift */,
-				634D98A1233A45E0006D5D8A /* TotalTVCell.xib */,
-				637625C52332200700D5822E /* CategoryMealTVCell.swift */,
-				637625C62332200700D5822E /* CategoryMealTVCell.xib */,
+				63B77F71234B0BAD002897FA /* FrontView */,
+				63B77F73234B0C9B002897FA /* CartView */,
+				63B77F72234B0C6E002897FA /* MenuView */,
+				63B77F74234B0D12002897FA /* CategoryView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63B77F71234B0BAD002897FA /* FrontView */ = {
+			isa = PBXGroup;
+			children = (
 				1C828FEF233CA23B0083D801 /* PopularCategoriesTVCell.swift */,
 				1C828FF0233CA23B0083D801 /* PopularCategoriesTVCell.xib */,
+				63154827234933C9009E6C01 /* PopularCategoryCVCell.swift */,
+				63154828234933C9009E6C01 /* PopularCategoryCVCell.xib */,
 				1C828FF3233CA24C0083D801 /* BestDealsTVCell.swift */,
 				1C828FF4233CA24C0083D801 /* BestDealsTVCell.xib */,
 				1C828FF7233CA2620083D801 /* MostPopularTVCell.swift */,
 				1C828FF8233CA2620083D801 /* MostPopularTVCell.xib */,
 			);
-			path = View;
+			path = FrontView;
+			sourceTree = "<group>";
+		};
+		63B77F72234B0C6E002897FA /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				63D95E7523313DD50022347E /* MenuCVCell.swift */,
+				63D95E7623313DD50022347E /* MenuCVCell.xib */,
+			);
+			path = MenuView;
+			sourceTree = "<group>";
+		};
+		63B77F73234B0C9B002897FA /* CartView */ = {
+			isa = PBXGroup;
+			children = (
+				634D989C233A2FEF006D5D8A /* CartItemTVCell.swift */,
+				634D989D233A2FEF006D5D8A /* CartItemTVCell.xib */,
+				634D98A0233A45E0006D5D8A /* TotalTVCell.swift */,
+				634D98A1233A45E0006D5D8A /* TotalTVCell.xib */,
+			);
+			path = CartView;
+			sourceTree = "<group>";
+		};
+		63B77F74234B0D12002897FA /* CategoryView */ = {
+			isa = PBXGroup;
+			children = (
+				637625C52332200700D5822E /* CategoryMealTVCell.swift */,
+				637625C62332200700D5822E /* CategoryMealTVCell.xib */,
+			);
+			path = CategoryView;
 			sourceTree = "<group>";
 		};
 		63DF9C4E232F7936008F1174 /* Model */ = {
@@ -324,6 +362,7 @@
 				63FE10862328F37B000247C4 /* Assets.xcassets in Resources */,
 				63E367F723299806008C003E /* GoogleService-Info.plist in Resources */,
 				637625C82332200700D5822E /* CategoryMealTVCell.xib in Resources */,
+				6315482A234933C9009E6C01 /* PopularCategoryCVCell.xib in Resources */,
 				1C828FF6233CA24C0083D801 /* BestDealsTVCell.xib in Resources */,
 				634D989F233A2FEF006D5D8A /* CartItemTVCell.xib in Resources */,
 				1C828FFA233CA2620083D801 /* MostPopularTVCell.xib in Resources */,
@@ -380,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63154829234933C9009E6C01 /* PopularCategoryCVCell.swift in Sources */,
 				63FE10952329588E000247C4 /* LogInViewController.swift in Sources */,
 				63DF9C50232F7E9A008F1174 /* RestaurantService.swift in Sources */,
 				63FE10812328F37A000247C4 /* WelcomeViewController.swift in Sources */,
