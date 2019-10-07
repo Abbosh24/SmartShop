@@ -15,10 +15,12 @@ class FrontViewController: RestaurantViewController {
     
     //1. Create a var
     var popularCategories: [PopularCategoryModel]?
-    var bestDeals: [BestDealsModel]?
+    var bestDeals:         [BestDealsModel]?
+    var mostPopular:       [MostPopularModel]?
     
-    var imagePaths: [String] = []
-    var bestDealsImagesPaths: [(String, String)] = []
+    var imagePaths:            [String] = []
+    var bestDealsImagesPaths:  [(String, String)] = []
+    var mostPopularImagePaths: [(String, String, Double)] = []
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -50,8 +52,18 @@ class FrontViewController: RestaurantViewController {
             print("image paths of best deals: \(self.bestDealsImagesPaths)")
             
 //            self.setImages()
+            
+            //MOST POPULAR
+            
+            self.mostPopular = restaurant.most_popular
+            
+//            for category in self.mostPopular! {
+//                
+//            }
+            
             self.tableView.reloadData()
         }) { (code) in }
+        
     }
     
 //    func setImages() {
