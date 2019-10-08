@@ -13,7 +13,7 @@ import SCLAlertView
 import RealmSwift
 
 
-class ChosenMealViewController: UIViewController {
+class ChosenMealViewController: SuperCartViewController {
     
     var selectedMeal: Item?
     let realm = try! Realm()
@@ -116,7 +116,9 @@ class ChosenMealViewController: UIViewController {
         setupNavBar()
         setupUI()
         styleTextFields()
-      
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
  
 }

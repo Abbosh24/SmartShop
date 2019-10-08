@@ -3,7 +3,7 @@ import UIKit
 import SideMenuSwift
 import Kingfisher
 
-class CategoryMealViewController: UIViewController {
+class CategoryMealViewController: SuperCartViewController {
     
     // MARK: - Properties
     

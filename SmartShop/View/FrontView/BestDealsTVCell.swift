@@ -6,7 +6,7 @@ class BestDealsTVCell: UITableViewCell {
 
     lazy var mealImageSlider: AACarousel = {
         let mealImageSlider = AACarousel()
-        mealImageSlider.contentMode = .scaleAspectFill
+        mealImageSlider.contentMode = .scaleToFill
         return mealImageSlider
     }()
     

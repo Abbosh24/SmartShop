@@ -21,16 +21,6 @@ class SideMenuViewController: UIViewController {
         return menuButton
     }()
     
-    lazy var searchButton: UIButton = {
-        let searchButton = customButton("Search", UIImage(named: "search")!)
-        return searchButton
-    }()
-    
-    lazy var cartButton: UIButton = {
-        let cartButton = customButton("Cart", UIImage(named: "cart50px")!)
-        return cartButton
-    }()
-    
     lazy var reservationsButton: UIButton = {
         let reservationsButton = customButton("Reservations", UIImage(named: "reservations")!)
         reservationsButton.addTarget(self, action: #selector(reservationsTapped), for: .touchUpInside)
@@ -85,9 +75,8 @@ class SideMenuViewController: UIViewController {
     }
     
     @objc func reservationsTapped() {
-        presentUILayer(UINavigationController(rootViewController: ReservationsViewController()))
+        presentUILayer(UINavigationController(rootViewController: ReservationsViewController()), SideMenuViewController() , .formSheet)
     }
-    
     
     @objc func logOutTapped() {
         do {
@@ -113,8 +102,6 @@ class SideMenuViewController: UIViewController {
     func setupUI() {
         self.view.addSubview(homeButton)
         self.view.addSubview(menuButton)
-        self.view.addSubview(searchButton)
-        self.view.addSubview(cartButton)
         self.view.addSubview(reservationsButton)
         self.view.addSubview(ordersButton)
         self.view.addSubview(logOutButton)
@@ -134,18 +121,8 @@ class SideMenuViewController: UIViewController {
             make.left.equalToSuperview().offset(buttonOffset)
         }
         
-        searchButton.snp.makeConstraints { (make) in
-            make.top.equalTo(menuButton.snp.bottom).offset(30)
-            make.left.equalToSuperview().offset(buttonOffset)
-        }
-        
-        cartButton.snp.makeConstraints { (make) in
-            make.top.equalTo(searchButton.snp.bottom).offset(30)
-            make.left.equalToSuperview().offset(buttonOffset)
-        }
-        
         reservationsButton.snp.makeConstraints { (make) in
-            make.top.equalTo(cartButton.snp.bottom).offset(30)
+            make.top.equalTo(menuButton.snp.bottom).offset(30)
             make.left.equalToSuperview().offset(buttonOffset)
         }
         

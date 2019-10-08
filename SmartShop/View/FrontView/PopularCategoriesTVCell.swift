@@ -4,7 +4,7 @@ import Kingfisher
 class PopularCategoriesTVCell: UITableViewCell {
 
     let popularCategoryCellId = "PopularCategoryCVCell"
-    
+    var parentController: UIViewController?
     var popularCategories: [PopularCategoryModel]? {
         didSet {
             self.collectionView.reloadData()
@@ -56,4 +56,15 @@ extension PopularCategoriesTVCell: UICollectionViewDelegate, UICollectionViewDat
         return cell
     }
     
-}
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let selectedCategory = self.popularCategories?[indexPath.item] {
+            
+            let categoryMealsVC = CategoryMealViewController()
+            categoryMealsVC.selectedCategory = selectedCategory
+            self.parentController?.navigationController?.pushViewController(categoryMealsVC, animated: true)
+        }
+        
+    }
+        
+    }

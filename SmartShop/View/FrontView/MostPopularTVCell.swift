@@ -5,15 +5,14 @@ class MostPopularTVCell: UITableViewCell {
 
     lazy var mealImageView: UIImageView = {
         let mealImageView = UIImageView()
-        mealImageView.contentMode = .scaleAspectFit
-        mealImageView.image = UIImage(named: "breakfast")
+        mealImageView.contentMode = .scaleToFill
         return mealImageView
     }()
     
     lazy var mealNameLabel: UILabel = {
         let mealNameLabel = UILabel()
         mealNameLabel.font = avenirHeavy18
-        mealNameLabel.text = "Name of Meal"
+        mealNameLabel.text = ""
         mealNameLabel.textColor = .black
         return mealNameLabel
     }()
@@ -21,7 +20,7 @@ class MostPopularTVCell: UITableViewCell {
     lazy var priceLabel: UILabel = {
         let priceLabel = UILabel()
         priceLabel.font = avenirHeavy18
-        priceLabel.text = "Price"
+        priceLabel.text = ""
         priceLabel.textColor = .black
         return priceLabel
     }()
@@ -33,8 +32,8 @@ class MostPopularTVCell: UITableViewCell {
         contentView.addSubview(priceLabel)
         
         mealImageView.snp.makeConstraints { (make) in
-            make.height.equalToSuperview().offset(-20)
-            make.width.equalTo(mealImageView.snp.height)
+            make.top.equalToSuperview()
+            make.height.equalTo(230)
             make.left.equalToSuperview().offset(15)
             make.right.equalToSuperview().offset(-15)
         }

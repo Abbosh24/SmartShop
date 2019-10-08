@@ -20,5 +20,6 @@ pod 'Kingfisher'
 pod 'SnappingStepper'
 pod 'RealmSwift'
 pod 'AACarousel'
+pod 'Stripe'
 
 end

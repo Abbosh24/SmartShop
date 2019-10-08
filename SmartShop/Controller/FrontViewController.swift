@@ -16,11 +16,7 @@ class FrontViewController: RestaurantViewController {
     //1. Create a var
     var popularCategories: [PopularCategoryModel]?
     var bestDeals:         [BestDealsModel]?
-    var mostPopular:       [MostPopularModel]?
-    
-    var imagePaths:            [String] = []
-    var bestDealsImagesPaths:  [(String, String)] = []
-    var mostPopularImagePaths: [(String, String, Double)] = []
+    var mostPopular:       MostPopularModel?
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -36,43 +32,34 @@ class FrontViewController: RestaurantViewController {
             
             //POPULAR CATEGORIES
             self.popularCategories = restaurant.popular_categories
-            for category in self.popularCategories! {
-                self.imagePaths.append(category.image_url!)
-            }
-            print("Image paths of popular categories: \(self.imagePaths)")
-            
             
             //BEST DEALS
             self.bestDeals = restaurant.best_deals
-            
-            for bestDeal in self.bestDeals! {
-                self.bestDealsImagesPaths.append((bestDeal.deal_image_url!, bestDeal.deal_title!))
-            }
-            
-            print("image paths of best deals: \(self.bestDealsImagesPaths)")
-            
-//            self.setImages()
+            self.displayBestDeals()
             
             //MOST POPULAR
-            
             self.mostPopular = restaurant.most_popular
             
-//            for category in self.mostPopular! {
-//                
-//            }
-            
             self.tableView.reloadData()
+            
         }) { (code) in }
         
     }
     
-//    func setImages() {
-//        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! BestDealsTVCell
-//        cell.mealImageSlider.setCarouselData(paths: bestDealsImagesPaths.map({ (tuple) -> T in
-//            let tuple = tuple as! (String, String)
-//        }), describedTitle: [], isAutoScroll: true, timer: 5.0, defaultImage: "breakfast")
-//        self.tableView.reloadData()
-//    }
+    func displayBestDeals() {
+        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! BestDealsTVCell
+        cell.mealImageSlider.delegate = self
+        
+        let titles = self.bestDeals!.map({
+            return $0.title
+        })
+        let imageUrls = self.bestDeals!.map({
+            return $0.image_url
+        })
+        
+        cell.mealImageSlider.setCarouselData(paths: imageUrls as! [String], describedTitle: titles as! [String], isAutoScroll: true, timer: 5.0, defaultImage: "breakfast")
+        self.tableView.reloadData()
+    }
 
 
 
@@ -106,6 +93,7 @@ extension FrontViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: popularCategoriesCellId, for: indexPath) as! PopularCategoriesTVCell
             //5. Assign the var in cell
+            cell.parentController = self
             cell.popularCategories = self.popularCategories
             return cell
         case 1:
@@ -113,32 +101,69 @@ extension FrontViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: mostPopularCellId) as! MostPopularTVCell
+            if let mostPopular = self.mostPopular, let url = self.mostPopular?.image_url {
+                cell.mealImageView.setImageFromURL(url)
+                cell.mealNameLabel.text = mostPopular.title
+                cell.priceLabel.text = "\(mostPopular.price!)"
+            }
+            
             return cell
         default: return UITableViewCell()
             
         }
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 2:
+            if let selectedMeal = self.mostPopular {
+            let chosenMealVC = ChosenMealViewController()
+                
+                let dict = selectedMeal.toJSON()
+                let item = Item(JSON: dict)
+                chosenMealVC.selectedMeal = item
+                chosenMealVC.view.backgroundColor = .white
+            self.navigationController?.pushViewController(chosenMealVC, animated: true)
+            }
+        default: break
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+
+        let label = UILabel()
+        label.frame = CGRect.init(x: 15, y: 15, width: tableView.bounds.size.width, height: tableView.bounds.size.height)
         switch section {
         case 0:
-            return "Popular Categories"
+            label.text = "Popular Categories"
         case 1:
-            return "Best Deals"
+            label.text = "Best Deals"
         case 2:
-            return "Most Popular"
+            label.text = "Most Popular"
         default: return nil
         }
+        label.font = avenirHeavy18 // my custom font
+        label.textColor = UIColor.black // my custom colour
+        label.sizeToFit()
+        headerView.addSubview(label)
+
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 110
+            return 120
         case 1:
-            return 250
+            return 265
         case 2:
-            return 300
+            return 250
         default: return 0
         }
     }
@@ -164,4 +189,35 @@ extension FrontViewController {
             make.edges.equalToSuperview()
         }
     }
+}
+
+extension FrontViewController: AACarouselDelegate {
+    
+    func didSelectCarouselView(_ view: AACarousel, _ index: Int) {
+        if let selectedMeal = self.bestDeals?[index] {
+        let chosenMealVC = ChosenMealViewController()
+            
+            let dict = selectedMeal.toJSON()
+            let item = Item(JSON: dict)
+            print("Item: \(item)")
+            chosenMealVC.selectedMeal = item
+            chosenMealVC.view.backgroundColor = .white
+        self.navigationController?.pushViewController(chosenMealVC, animated: true)
+        }
+    }
+    
+    func callBackFirstDisplayView(_ imageView: UIImageView, _ url: [String], _ index: Int) {
+        
+    }
+    
+    func downloadImages(_ url: String, _ index: Int) {
+        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! BestDealsTVCell
+        cell.mealImageSlider.delegate = self
+        let imageView = UIImageView()
+        imageView.kf.setImage(with: URL(string: url)!, placeholder: UIImage.init(named: "defaultImage"), options: [], progressBlock: nil, completionHandler: { (downloadImage, error, cacheType, url) in
+            cell.mealImageSlider.images[index] = downloadImage!
+        })
+    }
+    
+    
 }

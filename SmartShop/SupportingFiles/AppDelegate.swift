@@ -11,6 +11,7 @@ import SnapKit
 import SideMenuSwift
 import Firebase
 import RealmSwift
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //Configuration of Stripe API keys
+        
+        Stripe.setDefaultPublishableKey("pk_test_N3QBBcQzoUuEtFIkEFsBe5oQ00uXAhz7pE")
         
         //PATH FOR REALM
         print(Realm.Configuration.defaultConfiguration.fileURL as Any)

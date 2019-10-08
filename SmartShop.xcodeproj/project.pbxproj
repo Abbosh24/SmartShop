@@ -19,6 +19,7 @@
 		1C828FFA233CA2620083D801 /* MostPopularTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C828FF8233CA2620083D801 /* MostPopularTVCell.xib */; };
 		63154829234933C9009E6C01 /* PopularCategoryCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63154827234933C9009E6C01 /* PopularCategoryCVCell.swift */; };
 		6315482A234933C9009E6C01 /* PopularCategoryCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63154828234933C9009E6C01 /* PopularCategoryCVCell.xib */; };
+		633BE313234C4BF000BD1033 /* StripeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633BE312234C4BF000BD1033 /* StripeViewController.swift */; };
 		634D989B233A2D6F006D5D8A /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634D989A233A2D6F006D5D8A /* CartViewController.swift */; };
 		634D989E233A2FEF006D5D8A /* CartItemTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634D989C233A2FEF006D5D8A /* CartItemTVCell.swift */; };
 		634D989F233A2FEF006D5D8A /* CartItemTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634D989D233A2FEF006D5D8A /* CartItemTVCell.xib */; };
@@ -29,6 +30,7 @@
 		637625C72332200700D5822E /* CategoryMealTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637625C52332200700D5822E /* CategoryMealTVCell.swift */; };
 		637625C82332200700D5822E /* CategoryMealTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637625C62332200700D5822E /* CategoryMealTVCell.xib */; };
 		637625CA2332B05500D5822E /* ChosenMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637625C92332B05500D5822E /* ChosenMealViewController.swift */; };
+		6376ED06234C68AE00FD93D9 /* SuperCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6376ED05234C68AE00FD93D9 /* SuperCartViewController.swift */; };
 		638FC38D232AB959006F1DFF /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FC38C232AB959006F1DFF /* FrontViewController.swift */; };
 		63ABD0322338EF79005E0483 /* Pods_SmartShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63ABD0312338EF79005E0483 /* Pods_SmartShop.framework */; };
 		63B07B5A232C1EC00096210E /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B07B59232C1EC00096210E /* SideMenuViewController.swift */; };
@@ -62,6 +64,7 @@
 		1C828FF8233CA2620083D801 /* MostPopularTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MostPopularTVCell.xib; sourceTree = "<group>"; };
 		63154827234933C9009E6C01 /* PopularCategoryCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCategoryCVCell.swift; sourceTree = "<group>"; };
 		63154828234933C9009E6C01 /* PopularCategoryCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCategoryCVCell.xib; sourceTree = "<group>"; };
+		633BE312234C4BF000BD1033 /* StripeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeViewController.swift; sourceTree = "<group>"; };
 		634D989A233A2D6F006D5D8A /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		634D989C233A2FEF006D5D8A /* CartItemTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemTVCell.swift; sourceTree = "<group>"; };
 		634D989D233A2FEF006D5D8A /* CartItemTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemTVCell.xib; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		637625C52332200700D5822E /* CategoryMealTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMealTVCell.swift; sourceTree = "<group>"; };
 		637625C62332200700D5822E /* CategoryMealTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryMealTVCell.xib; sourceTree = "<group>"; };
 		637625C92332B05500D5822E /* ChosenMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenMealViewController.swift; sourceTree = "<group>"; };
+		6376ED05234C68AE00FD93D9 /* SuperCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCartViewController.swift; sourceTree = "<group>"; };
 		638FC38C232AB959006F1DFF /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		63ABD0312338EF79005E0483 /* Pods_SmartShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_SmartShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B07B59232C1EC00096210E /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				1C1D7B76233C93550050BEE0 /* RestaurantViewController.swift */,
+				6376ED05234C68AE00FD93D9 /* SuperCartViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				63DF9C4F232F7E9A008F1174 /* RestaurantService.swift */,
+				633BE312234C4BF000BD1033 /* StripeViewController.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 				63FE10952329588E000247C4 /* LogInViewController.swift in Sources */,
 				63DF9C50232F7E9A008F1174 /* RestaurantService.swift in Sources */,
 				63FE10812328F37A000247C4 /* WelcomeViewController.swift in Sources */,
+				6376ED06234C68AE00FD93D9 /* SuperCartViewController.swift in Sources */,
 				63DF9C56232F82FD008F1174 /* APIClient.swift in Sources */,
 				634D98A5233A5A5F006D5D8A /* CartItem.swift in Sources */,
 				63C10A8F232D77B500FEAEA6 /* ReservationsViewController.swift in Sources */,
@@ -436,6 +443,7 @@
 				1C2C63C32329670D00C9C35D /* SignUpViewController.swift in Sources */,
 				634D989E233A2FEF006D5D8A /* CartItemTVCell.swift in Sources */,
 				1C828FF9233CA2620083D801 /* MostPopularTVCell.swift in Sources */,
+				633BE313234C4BF000BD1033 /* StripeViewController.swift in Sources */,
 				1C828FF1233CA23B0083D801 /* PopularCategoriesTVCell.swift in Sources */,
 				638FC38D232AB959006F1DFF /* FrontViewController.swift in Sources */,
 				1C2C63C5232968AD00C9C35D /* CalculateOffset.swift in Sources */,
